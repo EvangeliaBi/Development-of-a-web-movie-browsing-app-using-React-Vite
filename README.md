@@ -112,4 +112,4 @@ Cloud synchronization of favorites
 Context API or Redux state management
 Pagination and lazy loading
 Enhanced search functionality
-(https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+(https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in the project.
