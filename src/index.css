@@ -1,0 +1,506 @@
+/* CSS Variables 
+   Ορίζουμε τα χρώματα μια φορά εδώ και τα χρησιμοποιούμε παντού με var().
+   Έτσι αν θέλουμε να αλλάξουμε π.χ. το κόκκινο, το αλλάζουμε μόνο εδώ. */
+:root {
+  --bg-deep: #17181d;
+  --bg-card: #232530;
+  --accent: #da1a1a;
+  --accent-dim: #a10b0b;
+  --text-primary: #ffffff;
+  --border: #2e2e2e;
+  --border-card: #3a3a3a;
+}
+
+/* Reset — Αφαιρεί τα default margins/padding του browser και
+   κάνει όλα τα elements να υπολογίζουν το μέγεθός τους
+   συμπεριλαμβάνοντας το padding και το border -> box-sizing: border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+}
+
+/* 
+Landing page
+*/
+
+/* Καταλαμβάνει ακριβώς το ύψος του viewport (100vh)
+   και στοιχίζει το περιεχόμενο αριστερά με padding */
+.landing {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.landing-title {
+  font-family: "Bebas Neue", serif;
+  font-size: 72px;
+  color: var(--text-primary);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.landing-title span {
+  color: var(--accent);
+}
+
+.landing-tagline {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.landing-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content; /* κουμπί τόσο φαρδύ όσο το περιεχόμενό του */
+  background-color: var(--accent);
+  color: var(--text-primary);
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 4px;
+}
+
+.landing-btn:hover {
+  background-color: var(--accent-dim);
+}
+
+.landing-btn-icon {
+  font-size: 12px;
+}
+
+/* 
+   Navbar
+*/
+
+/* position: sticky + top: 0 κρατάει το navbar ορατό
+   καθώς ο χρήστης κάνει scroll προς τα κάτω.
+   z-index: 100 το κρατάει πάνω από όλα τα υπόλοιπα elements. */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 32px;
+  background-color: var(--bg-deep);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-family: "Bebas Neue", serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+.navbar-brand span {
+  color: var(--accent);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-link {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+.navbar-link:hover {
+  color: var(--text-primary);
+}
+
+.navbar-link-active {
+  color: var(--accent);
+}
+
+/* 
+Movies Page 
+*/
+
+/* min-height: 100vh και flex-direction: column διασφαλίζει ότι
+   το footer μένει πάντα κολλημένο στο κάτω μέρος της σελίδας */
+.movies-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* flex: 1 κάνει το main να καταλαμβάνει όλο τον διαθέσιμο
+   χώρο μεταξύ navbar και footer */
+.movies-main {
+  flex: 1;
+  padding: 28px 24px;
+}
+
+/* 
+   Category
+*/
+
+.category {
+  margin-bottom: 36px;
+}
+
+.category-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+/* overflow-x: auto ενεργοποιεί το οριζόντιο scroll στη σειρά των καρτών.
+   Χωρίς αυτό οι κάρτες θα έσπαγαν σε νέα γραμμή. */
+.category-row {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Styling της μπάρας scroll — την κάνουμε λεπτή και διακριτική */
+.category-row::-webkit-scrollbar {
+  height: 3px;
+}
+
+.category-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-row::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 2px;
+}
+
+/* 
+Movies Card
+*/
+
+/* flex-shrink: 0 εμποδίζει τις κάρτες να συρρικνωθούν
+   όταν δεν χωράνε στη σειρά — έτσι διατηρούν πάντα το width: 160px */
+.movie-card {
+  flex-shrink: 0;
+  width: 160px;
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--bg-card);
+}
+
+.movie-card:hover {
+  border-color: var(--accent);
+}
+
+.movie-card-blurred {
+  opacity: 0.25;
+}
+
+.movie-card-active {
+  border-color: var(--accent);
+}
+
+/* Front */
+.card-front {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-poster {
+  width: 100%;
+  height: 200px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  overflow: hidden;
+}
+
+/* object-fit: cover κάνει την εικόνα να καλύπτει όλο τον χώρο
+   χωρίς να παραμορφωθεί και κόβει ό,τι περισσεύει */
+.card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.card-btn {
+  width: 100%;
+  background-color: var(--accent);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 3px;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 0;
+}
+
+.card-btn:hover {
+  background-color: var(--accent-dim);
+}
+
+/* Back */
+.card-back {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 260px; /* ίδιο ύψος με την μπροστινή πλευρά */
+}
+
+.card-back-genre {
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.card-back-title {
+  font-family: "Bebas Neue", serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.card-back-rating {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* flex: 1 κάνει την περιγραφή να καταλαμβάνει όλο τον διαθέσιμο
+   χώρο, σπρώχνοντας το κουμπί CLOSE στο κάτω μέρος της κάρτας */
+.card-back-desc {
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-back-close {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Oswald", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.card-back-close:hover {
+  color: var(--text-primary);
+}
+
+/* 
+   Footer
+*/
+
+.footer {
+  background-color: var(--bg-deep);
+  border-top: 1px solid var(--border);
+  padding: 40px 32px 20px;
+}
+
+/* flex-wrap: wrap επιτρέπει στις στήλες να σπάσουν σε νέα γραμμή
+   σε μικρές οθόνες αντί να συρρικνωθούν */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+/* flex: 2 κάνει το brand να είναι διπλάσιο σε πλάτος
+   από τις υπόλοιπες στήλες που έχουν flex: 1 */
+.footer-brand {
+  flex: 2;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-brand-name {
+  font-family: "Bebas Neue", serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+}
+
+.footer-brand-name span {
+  color: var(--accent);
+}
+
+.footer-brand-desc {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-heading {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.footer-col-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col-list li {
+  font-family: "Oswald", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.footer-col-list li:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-copyright {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+/* 
+   Responsive
+   Σε οθόνες κάτω από 768px (tablets/phones) κρύβουμε
+   τα navbar links και μειώνουμε τα paddings, font sizes 
+*/
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .movies-main {
+    padding: 20px 16px;
+  }
+
+  .landing {
+    padding-left: 6%;
+  }
+
+  .landing-title {
+    font-size: 52px;
+  }
+
+  .footer {
+    padding: 28px 16px 20px;
+  }
+}

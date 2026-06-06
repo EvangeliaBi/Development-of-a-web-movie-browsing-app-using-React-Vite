@@ -1,0 +1,30 @@
+/* Τα κουμπιά φίλτρου — flex-wrap: wrap τα αφήνει να σπάσουν
+   σε νέα γραμμή αν δεν χωράνε όλα σε μία σειρά */
+.genre-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.genre-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* transform: scale(1.05) μεγαλώνει ελαφρά το κουμπί στο hover */
+.genre-btn:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+.genre-btn.active {
+  background: #da1a1a;
+  border-color: #da1a1a;
+  color: white;
+}

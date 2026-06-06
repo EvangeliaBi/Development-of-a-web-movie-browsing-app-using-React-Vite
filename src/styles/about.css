@@ -1,0 +1,53 @@
+/* Container */
+.about-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #17181d;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  font-family: "Oswald", sans-serif;
+}
+
+/* Title */
+.about-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #da1a1a;
+  font-family: "Bebas Neue", serif;
+}
+
+/* Paragraphs */
+.about-container p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Features box */
+.about-features {
+  margin-top: 25px;
+  padding: 20px;
+  background: #232530;
+  border-radius: 10px;
+}
+
+/* Features title */
+.about-features h2 {
+  margin-bottom: 10px;
+  color: #da1a1a;
+  font-family: "Bebas Neue", serif;
+}
+
+/* List */
+.about-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-features li {
+  padding: 8px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #232530;
+}

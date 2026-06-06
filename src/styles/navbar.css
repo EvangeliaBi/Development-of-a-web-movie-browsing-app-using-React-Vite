@@ -1,0 +1,98 @@
+/* Navbar container — space-between στέλνει το brand αριστερά
+   και τα links/search δεξιά */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #141414;
+}
+
+/* Brand */
+.navbar-brand {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar-brand span {
+  color: red;
+}
+
+/* Ομαδοποιεί search και links μαζί στη δεξιά πλευρά */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+/* background: transparent κάνει το input να φαίνεται
+   σαν μέρος του .navbar-search container */
+.navbar-search input {
+  padding: 8px 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  width: 180px;
+  font-size: 14px;
+}
+
+.navbar-search input::placeholder {
+  color: #aaa;
+}
+
+/* Search button — flex-shrink: 0 εμποδίζει το κουμπί να
+   συρρικνωθεί αν το input δεν έχει αρκετό χώρο */
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 4px;
+  background: #da1a1a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #a10b0b;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* transition: color 0.2s κάνει την αλλαγή χρώματος στο hover
+   να γίνεται ομαλά αντί απότομα */
+.navbar-link {
+  color: #da1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover {
+  color: #a10b0b;
+}
+
+.navbar-link-active {
+  color: #a10b0b;
+}
